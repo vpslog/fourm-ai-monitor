@@ -1,0 +1,19 @@
+services:
+  ns-app:
+    build: .
+    ports:
+      - "5557:5557"
+    volumes:
+      - ./data:/app/data  # 挂载数据目录
+    environment:
+      - MONGO_HOST=mongodb://ns-mongo:27017/
+      - ACCESS_TOKEN=your_access_token_here  # 替换为你的访问令牌，登录网页的时候需要输入
+    depends_on:
+      - ns-mongo
+    restart: unless-stopped  # 自动重启策略
+
+  ns-mongo:
+    image: mongo:latest  # 使用最新版 MongoDB
+    volumes:
+      - ./data/db:/data/db  # 持久化数据库数据
+    restart: unless-stopped

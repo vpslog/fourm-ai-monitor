@@ -1,0 +1,15 @@
+{
+    "config": {
+        "frequency": 60,
+        "use_keywords_filter": false,
+        "ns_keywords": "出,收,促销,闪购,新,优惠,低价,折扣,限时,特价,活动,首发",
+        "use_ai_filter": true,
+        "cf_account_id": "",
+        "cf_token": "",
+        "model": "@cf/qwen/qwen3-30b-a3b-fp8",
+        "ns_prompt": "设定：你是一位精通 VPS 相关信息的中文助手，专注帮助用户高效筛选和总结 NodeSeek 论坛中的内容。任务：根据用户提供的帖子标题和描述，判断该帖子是否提供了促销信息，如果提供了，返回 TRUE。如果是交易帖或者测评帖，则返回 FALSE。",
+        "notice_type": "telegram",
+        "telegrambot": "",
+        "chat_id": ""
+    }
+}
