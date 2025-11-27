@@ -22,3 +22,11 @@
     
 
 4.  **访问管理界面** 打开浏览器访问：http://IP:5557
+
+过滤器配置界面：
+
+![alt text](image-1.png)
+
+AI筛选效果：
+
+![alt text](image.png)
