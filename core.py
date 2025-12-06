@@ -97,10 +97,10 @@ class NSMonitor:
         # 发布时间 24h 内才推送
         if (datetime.now(timezone.utc) - thread['pub_date'].replace(tzinfo=timezone.utc)).total_seconds() <= 86400:
             # NS 关键词过滤
-            if self.config.get('use_keywords_filter', False) and not self.filter.keywords_filter(thread['description'], self.config.get('ns_keywords', '')):
+            if self.config.get('use_keywords_filter', False) and not self.filter.keywords_filter(thread['title']+' description: '+thread['description'], self.config.get('ns_keywords', '')):
                 return
             if self.config.get('use_ai_filter', False):
-                ai_description = self.filter.ai_filter(thread['description'], self.config.get('ns_prompt', ''))
+                ai_description = self.filter.ai_filter(thread['title']+' description: '+thread['description'], self.config.get('ns_prompt', ''))
                 if 'false' in ai_description.lower():
                     return
             else:
