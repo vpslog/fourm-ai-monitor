@@ -1,6 +1,6 @@
 services:
   ns-app:
-    build: .
+    image: ghcr.io/vpslog/fourm-ai-monitor:latest 
     ports:
       - "5557:5557"
     volumes:
